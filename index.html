@@ -1,12 +1,420 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jinxing Li</title>
+  <title>Beibei Wang</title>
+  <meta name="description" content="Beibei Wang - AI Researcher & Engineer">
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2430;
+      --muted: #667085;
+      --line: #e5e7eb;
+      --accent: #4f6ef7;
+      --accent-soft: #eef2ff;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 180px;
+    }
+
+    .brand-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    .socials {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .socials a:hover,
+    .menu a:hover,
+    .link:hover {
+      color: var(--accent);
+    }
+
+    .menu {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .menu a {
+      position: relative;
+      padding-bottom: 6px;
+      color: #2f3747;
+    }
+
+    .menu a:hover::after,
+    .menu a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: start;
+      padding-top: 24px;
+    }
+
+    .hero-card,
+    .side-card,
+    .section-card {
+      background: var(--card);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin-top: 14px;
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .intro {
+      margin-top: 28px;
+      font-size: 1.2rem;
+      color: #556070;
+      max-width: 760px;
+    }
+
+    .intro strong {
+      color: var(--text);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(79, 110, 247, 0.25);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .side-card {
+      padding: 28px;
+    }
+
+    .profile-box {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 22px;
+    }
+
+    .mini-title {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .mini-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .section-card {
+      padding: 28px;
+    }
+
+    .section-card h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+
+    .section-card p,
+    .section-card li {
+      color: #5b6576;
+    }
+
+    .section-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        gap: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Jinxing Li</h1>
-  <p>Welcome to my GitHub Pages site.</p>
+  <header class="topbar">
+    <nav class="nav">
+      <div class="brand">
+        <div class="brand-logo">BW</div>
+        <div class="socials">
+          <a href="https://github.com/mustardbloom" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+          <a href="#">Google Scholar</a>
+          <a href="mailto:your-email@example.com">Email</a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#blog">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div class="hero-card">
+        <div class="eyebrow">AI Researcher & Engineer</div>
+        <h1>Beibei Wang</h1>
+        <div class="subtitle">Machine Learning · LLMs · Agentic Systems</div>
+
+        <p class="intro">
+          I build intelligent systems that connect <strong>research</strong> with
+          <strong>real-world applications</rong>, with interests in large language models,
+          multi-agent systems, machine learning, and scientific AI.
+        </p>
+
+        <p class="intro">
+          My work spans AI system design, model training, evaluation, and product-oriented
+          deployment. I am especially interested in building reliable, scalable agent systems
+          that can reason, use tools, and interact with the world effectively.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#about">Read About Me</a>
+          <a class="btn btn-secondary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#">Research CV</a>
+          <a class="btn btn-secondary" href="#">Industry Resume</a>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <div class="profile-box">BW</div>
+
+        <h3 class="mini-title">Focus Areas</h3>
+        <ul class="mini-list">
+          <li>LLMs and post-training</li>
+          <li>Multi-agent systems</li>
+          <li>RAG and tool use</li>
+          <li>ML system design</li>
+          <li>Scientific machine learning</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="section-card" id="about">
+        <h2>About</h2>
+        <p>
+          I am interested in building AI systems that are both capable and practical.
+          My background includes machine learning, scientific research, and applied AI
+          engineering. I enjoy bridging theory, experimentation, and production.
+        </p>
+        <p>
+          This website is a place to share my work, projects, publications, and thoughts
+          on machine learning and agentic AI.
+        </p>
+      </div>
+
+      <div class="section-card" id="projects">
+        <h2>Projects</h2>
+        <ul>
+          <li>Agentic workflows for reasoning and tool use</li>
+          <li>LLM evaluation and post-training pipelines</li>
+          <li>Retrieval-augmented generation systems</li>
+          <li>Machine learning for scientific applications</li>
+        </ul>
+      </div>
+
+      <div class="section-card" id="publications">
+        <h2>Publications</h2>
+        <p>
+          Add selected papers, preprints, workshop papers, or research summaries here.
+        </p>
+        <ul>
+          <li>Paper title 1</li>
+          <li>Paper title 2</li>
+          <li>Paper title 3</li>
+        </ul>
+      </div>
+
+      <div class="section-card" id="blog">
+        <h2>Blog</h2>
+        <p>
+          You can use this section to post notes on LLMs, agents, ML interviews,
+          research ideas, or technical tutorials.
+        </p>
+        <ul>
+          <li>Post title 1</li>
+          <li>Post title 2</li>
+          <li>Post title 3</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 Beibei Wang. Built with GitHub Pages.
+  </footer>
 </body>
 </html>
