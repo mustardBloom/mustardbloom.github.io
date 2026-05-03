@@ -1,19 +1,19 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'Beibei Wang',
-  description: 'AI agents, coding agents, LLM evaluation, and benchmark design',
+  title: 'Bei-Bei Wang',
+  description: 'LLM agents, agentic RL, reinforcement learning environments, and multi-agent systems',
   cleanUrls: true,
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
-    ['meta', { name: 'author', content: 'Beibei Wang' }],
-    ['meta', { property: 'og:title', content: 'Beibei Wang' }],
-    ['meta', { property: 'og:description', content: 'Research on AI agents, coding agents, LLM evaluation, and benchmark design' }],
+    ['meta', { name: 'author', content: 'Bei-Bei Wang' }],
+    ['meta', { property: 'og:title', content: 'Bei-Bei Wang' }],
+    ['meta', { property: 'og:description', content: 'LLM agents, agentic RL, reinforcement learning environments, and multi-agent systems' }],
   ],
 
   themeConfig: {
-    siteTitle: 'Beibei Wang',
+    siteTitle: 'Bei-Bei Wang',
 
     nav: [
       { text: 'Home', link: '/' },
@@ -48,7 +48,7 @@ export default defineConfig({
 
     footer: {
       message: '',
-      copyright: '© 2026 Beibei Wang',
+      copyright: '© 2026 Bei-Bei Wang',
     },
 
     search: {

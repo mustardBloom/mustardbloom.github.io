@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: Beibei Wang
-  text: AI Agents & LLM Systems
-  tagline: Research on coding agents, LLM evaluation, benchmark design, and multi-agent systems.
+  name: Bei-Bei Wang
+  text: LLM Agents & Agentic AI Systems
+  tagline: Agentic RL, reinforcement learning environments, multi-agent systems, and coding agent engineering.
   actions:
     - theme: brand
       text: Read the Book
@@ -17,20 +17,21 @@ hero:
       link: /about
 
 features:
-  - icon: 🤖
-    title: Coding Agents
-    details: Studying how AI agents write, debug, and reason about code — from architecture to harness engineering.
-    link: /coding-agents/
-  - icon: 📊
-    title: LLM Evaluation
-    details: Designing benchmarks and evaluation methods for large language models and agentic systems.
-  - icon: 🧪
-    title: Benchmark Design
-    details: Building rigorous, reproducible benchmarks that measure what matters in agent capabilities.
-  - icon: 🔬
-    title: Multi-Agent Systems
-    details: Exploring planner-executor patterns, tool use, and evaluation-driven agent workflows.
+  - icon: 🎯
+    title: Agentic Reinforcement Learning
+    details: Training LLM agents with reinforcement learning — from reward design and GRPO to policy optimization for tool-using agents.
     link: /projects/
+  - icon: 🌍
+    title: RL Environments
+    details: Building environments where agents learn to code, debug, and navigate complex tasks through trial, feedback, and self-correction.
+  - icon: 🤖
+    title: Multi-Agent Systems
+    details: Designing planner-executor architectures, agent coordination protocols, and evaluation-driven multi-agent workflows.
+    link: /projects/
+  - icon: 🛠️
+    title: Coding Agent Engineering
+    details: The harness layer behind coding agents — tool systems, context management, permission models, and production architectures.
+    link: /coding-agents/
 ---
 
 <style>
@@ -48,12 +49,12 @@ features:
 
 ## Current Focus
 
-I build intelligent systems that connect research with real-world applications. My work spans model training, post-training, evaluation, agent design, and production-oriented machine learning systems.
+I study how LLM-based agents learn, act, and improve through reinforcement learning. My work connects agentic RL training with real-world environments — building agents that can reason, use tools, recover from errors, and collaborate with other agents.
 
-I am especially interested in building reliable, scalable agent systems that can reason, use tools, and interact with the world effectively.
+Research interests span the full stack: from RL environment design and reward shaping, to multi-agent coordination, to the harness engineering that makes coding agents work in production.
 
 <div style="margin-top: 2rem; padding: 1.5rem; background: var(--vp-c-bg-soft); border-radius: 8px;">
 
-**Newsletter** — I write about coding agents, LLM evaluation, and systems design. [Subscribe here →](/newsletter)
+**Newsletter** — I write about agentic RL, coding agents, and AI systems engineering. [Subscribe here →](/newsletter)
 
 </div>
